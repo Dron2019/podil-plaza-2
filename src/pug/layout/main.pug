@@ -1,0 +1,85 @@
+include ../includes/mixins.pug
+block variable
+
+- 
+	var fb = 'https://facebook.com';
+	var insta = 'https://instagram.com';
+	var viber = 'https://viber.com';
+	var complexTel = '(067) 747-01-51';
+	var complexAdress = 'Киев, ул. Ж.Жабаєва,5';
+
+	var menu = [
+		[
+			['Философия проекта ','philosophy.html'],
+			['Удобства ','facilities.html'],
+			['Документы ','documents.html'],
+			['Галерея ','gallery.html'],
+			['Фильм о проекте ','video-about.html'],
+			['Расположение ','location.html'],
+			['Инфраструктура ','infrastructure.html'],
+			['Новости ','news.html'],
+			['Ход строительства ','build-progress.html'],
+			['Застройщик','developer.html'],
+			['Контакты','contacts.html'],
+
+		],
+		[
+			['Квартиры','3d.html'],
+			['Коммерческая недвижимость','commercial.html'],
+			['Подбор по параметрам','3d.html'],
+		],
+		[
+			['Т: (067) 747-0151 ','tel:0677470151'],
+			['Е: blabla@gmail.com ','mailto:blabla@gmail.com'],
+			['А: Киев, ул. Чудесная, 56','https://maps.google.com/?q=Киев, ул. Чудесная, 56'],
+		]
+		];
+doctype html
+html(lang="uk")
+	head
+		meta(charset='utf-8')
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
+		//- Edge и ряд мобильных браузеров слишком умны. Отключим это.
+		meta(name='format-detection', content='telephone=no')
+		meta(name='format-detection', content='date=no')
+		meta(name='format-detection', content='address=no')
+		meta(name='format-detection', content='email=no')
+		meta(content='notranslate', name='google')
+		// Google Tag Manager
+		// End Google Tag Manager
+		
+		block meta
+		block head
+			
+
+	body
+		// Google Tag Manager (noscript)
+
+		// End Google Tag Manager (noscript)
+		// Facebook Pixel Code 
+
+		// End Facebook Pixel Code 
+		// START SVG SPRITE
+		
+		include ../../assets/svg-sprite/sprite/symbol_sprite.php
+		// END SVG SPRITE
+		// START LOADER
+		include ../includes/preloader.pug
+		// END LOADER
+		// START HEADER
+		block header
+		include ../includes/header.pug
+		include ../includes/menu.pug
+		// END HEADER
+		.page__inner(id=pageName)
+			.page__content
+				block content
+
+			.page__footer-wrapper
+				// START FOOTER
+				block footer
+				include ../includes/footer.pug
+				// END FOOTER
+			
+		block scripts
+		script(defer src="./assets/scripts/forms-handler.js")

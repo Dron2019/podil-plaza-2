@@ -1,0 +1,19 @@
+.common-form-js.common-form-wrapper
+    img(src="./assets/images/callback-photo.jpg")
+    form.common-form(data-name="contact-form")
+        legend Заказать звонок
+        .sublegend Оставьте свой номер и мы свяжемся с вами 
+        .mfp-close(data-before="Закрыть")
+            <svg class="mfp-close-img" width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g class="close-group">
+                    <path d="M14.0001 13L24.6067 23.6066" stroke="white"/>
+                    <path d="M24.6066 13L14 23.6066" stroke="white"/>
+                </g>
+            </svg>
+        .input-group
+            .input-group__icon
+            input(autocomplete="off" data-error_mes="Введите имя" name="name" data-required="true" type="text" data-pattern="" placeholder="Имя:*")
+        .input-group
+            .input-group__icon
+            input(autocomplete="off" data-error_mes="Введите номер телефона" name="tel" inputmode="tel" data-required="true" type="text" data-pattern="" placeholder="Телефон:*")
+        button.button-std.submit-js(type="submit" data-before="Жду звонка")

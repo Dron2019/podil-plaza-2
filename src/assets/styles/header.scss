@@ -1,0 +1,74 @@
+.menu {
+    position: fixed;
+    width: var(--menu-width);
+    --this-sides: 35px;
+    padding: 0 var(--this-sides);
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 5;
+    background-color: var(--blue);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    &__decor {
+        &-bottom {
+            transform: rotate(180deg);
+        }
+    }
+    ul a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+        line-height: 12px;
+        /* identical to box height, or 100% */
+        text-decoration: none;
+        color: var(--ffffff);
+        text-align: center;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 1.75em;
+    }
+    .icon--menu-decor {
+        width: 100%;
+    }
+    &__lang-wrap {
+        display: flex;
+        margin-bottom: 26px;
+    }
+    &__sngl-lang {
+        font-size: 10px;
+        line-height: 10px;
+        color: var(--ffffff);
+        &_active {
+            color: var(--gold);
+        }
+    }
+    &__sngl-lang:not(:last-child) {
+        margin-right: 20px;
+    }
+    &__form-call {
+        font-size: 16px;
+        line-height: 16px;
+        color: var(--blue);
+        background-color: var(--gold);
+        border-radius: 25px;
+        width: 200px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    &__tel {
+        font-family: $default-font2;
+        font-size: 24px;
+        line-height: 24px;
+        text-decoration: none;
+        color: var(--ffffff);
+        margin-bottom: 26px;
+    }
+}

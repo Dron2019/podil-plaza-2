@@ -1,0 +1,88 @@
+extends ../layout/main
+block variable
+	- var version = "ua";
+	- var pageName = "index";
+block meta
+	title= 'Podil Plaza Residence 2'
+	meta(name='description', content='')
+block head
+		link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+	script(defer src='./assets/scripts/libs.js')
+	script(defer src="./assets/scripts/menu.js")
+	script(defer src='./assets/scripts/index.js')
+block content
+	section.main-screen
+		picture.main-screen__bg
+			source(srcset="./assets/images/index/ms-bg.jpg")
+			img(src="./assets/images/index/ms-bg.jpg")
+		.main-screen__icons-row
+			.icon-with-label
+				.icon-with-label__icon
+					+svg('metro')
+				.icon-with-label__text Контрактова площа
+			.icon-with-label
+				.icon-with-label__icon
+					+svg('marker')
+				.icon-with-label__text м. Київ, Глибочицька 73
+			.icon-with-label
+				.icon-with-label__icon
+					+svg('clock')
+				.icon-with-label__text пн-пт: 09:00-19:00 сб-вс: 10:00-17:00
+		.main-screen__title-wrap
+			.main-screen__title Багатофункціональний житловий комплекс бізнес класу
+			.main-screen__but Дізнатися більше
+		.main-screen__section-info-wrap
+			.section-info 
+				.section-info__top
+					span Секція 1 
+					span |
+					span UAH /м2
+				.section-info__price 
+					span >
+					span 38550
+			.section-info 
+				.section-info__top
+					span Секція 2 
+					span |
+					span UAH /м2
+				.section-info__price 
+					span >
+					span 42403
+	section.about-block 
+		.about-block__left-column
+			.title Про комплекс
+			.subtitle «PODIL PLAZA & RESIDENCE - 2» — це багатофункціональний престижний житловий комплекс преміум-класу, розташований у самому серці Подолу. 
+			.text.left-shifted Розкішне природне оточення біля підніжжя гори Щекавиця, статусне сусідство, ексклюзивна архітектура і дизайн, високоякісний сервіс — це правила життя у стилі преміум. Ваші правила!
+		.about-block__right-column
+			.about-block__golden-circle
+				img(src="./assets/images/index/golde-circle.png").about-block__golden-circle-img
+				.about-block__golden-circle-text <span class="text">Назва комплексу — </span><span class="text gold">не просто гарне поєднання слів.</span>
+			.subtitle Це відображення особливого статусу та способу життя.
+	section.about-block-bg
+		img(src="./assets/images/index/about-block-bg.jpg")
+	section.panorama
+		.panorama__text-content
+			.title Панорама
+			.subtitle З вікон житлового комплексу «PODIL PLAZA & RESIDENCE–2» відкриваються приголомшливі панорамні види на старовинний Поділ.
+			a.button-std(href="") Показати на Google Maps
+		.panorama-help-popup.js-panorama-help-popup
+			span.panorama-help-popup__text Андріївська церква
+		include ../includes/panorama.pug
+	section.podil-about
+		img(src="./assets/images/index/podil-about-decor.png").podil-about__decor
+		.podil-about__content
+			.title «PODIL PLAZA & RESIDENCE - 2» - це новий настрій класичного Подолу.
+			.podil-about__column-left
+				.subtitle.left-part Сучасний Поділ - це основний культурний центр Києва, котрий приваблює городян і туристів старовинною архітектурою, історичними пам’ятками та богемною атмосферою.
+			.podil-about__column-right
+				.text За кількістю історико-архітектурних пам’яток сучасний Поділ впевнено займає лідируючу позицію серед інших столичних районів.
+				.subtitle Незважаючи на появу нових сучасних об’єктів, Поділ зберіг свою чарівність та самобутність.
+		img(src="./assets/images/index/podil-about-bg.jpg").podil-about__bg
+
+
+block footer
+block header
+
+
+
