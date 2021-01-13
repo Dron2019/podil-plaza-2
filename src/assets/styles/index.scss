@@ -14,6 +14,9 @@
         --header-height: 100px;
         /* ывсчс */
         --other-gray: #F2F2F2;
+        @include from(1360px) {
+            --menu-width: 300px;
+        }
         @include to(768px) {
             --side-fields: 22px;
             --side-padding: 20px;
@@ -342,70 +345,177 @@
         }
     }
     
-    .double-part-section {
+    .philosophy-double-section {
         display: flex;
-        flex-wrap: wrap;
         align-items: center;
-        padding-left: var(--side-fields);
-        min-height: calc(100vh - var(--header-height));
-        .button-std {
-            margin-top: 55px;
-        }
-        .title {
-            max-width: 10ch;
-        }
+        position: relative;
+        min-height: 100vh;
+        &__img,
         &__text {
-            @include size(5);
-            @include shift-padding(0.8);
+            width: 50%;
+            position: relative;
+            z-index: 1;
         }
         &__img {
-            @include size(7);
-            height: calc(100vh - var(--header-height));
-            margin-left: auto;
+            height: 100vh;
+        }
+        &__img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        &__text {
+            position: relative;
+            @include shift-padding-left(1);
+            @include shift-padding-right(0.8);
+            justify-content: center;
+            height: 100vh;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+        &__text-decor {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            width: 35%;
+        }
+        .title {
+            position: relative;
             img {
-                height: 100%;
-                object-fit: cover;
+                right: 0;
+                top: 50%;
+                transform: translate(50%, -50%);
+                width: 60%;
             }
         }
-        &.symmetrical &__img,
-        &.symmetrical &__text {
-            @include size(6);
+        .adv-sngl {
+            margin-top: 50px;
+            max-width: 80%;
         }
-        &.reverse {
-            padding-left: 0;
-            padding-right: var(--side-fields);
-        }
-        &.reverse &__img {
-            margin-left: 0;
-            margin-right: auto;
-        }
-        &.white {
-            background-color: var(--white);
-        }
-        @include to(950px) {
+        @include to(768px) {
             &__text {
-                padding-left: 0;
-                padding-right: 0;
+                @include shift-padding-left(0.5);
+                @include shift-padding-right(0.4);
             }
         }
         @include to(575px) {
-            padding-left: 0;
-            min-height: auto;
+            flex-wrap: wrap;
             &__img,
             &__text {
                 width: 100%;
             }
+            &__img {
+                order: 2;
+            }
             &__text {
+                order: 1;
                 padding-top: 20px;
                 padding-bottom: 20px;
-                padding-left: var(--side-fields);
-            }
-            &__img {
-                margin-top: auto;
-                height: calc(50vh - var(--header-height));
-            }
-            .button-std {
-                margin-top: 20px;
             }
         }
     }
+    
+    .adv-sngl {
+        &__text {
+            margin-top: 20px;
+        }
+    }
+    
+    .flats {
+        position: relative;
+        height: 100vh;
+        &__text {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #F4F3EC;
+            padding-left: var(--side-fields);
+            padding-right: var(--side-fields);
+            padding-top: calc(var(--side-fields) * 0.5);
+            padding-bottom: calc(var(--side-fields) * 0.7);
+            &>*:not(:last-child) {
+                margin-bottom: 30px;
+            }
+            &_right {
+                left: auto;
+                right: 0;
+            }
+        }
+        &__img {
+            height: 100%;
+        }
+    }
+    
+    // .double-part-section {
+    //     display: flex;
+    //     flex-wrap: wrap;
+    //     align-items: center;
+    //     padding-left: var(--side-fields);
+    //     min-height: calc(100vh - var(--header-height));
+    //     .button-std {
+    //         margin-top: 55px;
+    //     }
+    //     .title {
+    //         max-width: 10ch;
+    //     }
+    //     &__text {
+    //         @include size(5);
+    //         @include shift-padding(0.8);
+    //     }
+    //     &__img {
+    //         @include size(7);
+    //         height: calc(100vh - var(--header-height));
+    //         margin-left: auto;
+    //         img {
+    //             height: 100%;
+    //             object-fit: cover;
+    //         }
+    //     }
+    //     &.symmetrical &__img,
+    //     &.symmetrical &__text {
+    //         @include size(6);
+    //     }
+    //     &.reverse {
+    //         padding-left: 0;
+    //         padding-right: var(--side-fields);
+    //     }
+    //     &.reverse &__img {
+    //         margin-left: 0;
+    //         margin-right: auto;
+    //     }
+    //     &.white {
+    //         background-color: var(--white);
+    //     }
+    //     @include to(950px) {
+    //         &__text {
+    //             padding-left: 0;
+    //             padding-right: 0;
+    //         }
+    //     }
+    //     @include to(575px) {
+    //         padding-left: 0;
+    //         min-height: auto;
+    //         &__img,
+    //         &__text {
+    //             width: 100%;
+    //         }
+    //         &__text {
+    //             padding-top: 20px;
+    //             padding-bottom: 20px;
+    //             padding-left: var(--side-fields);
+    //         }
+    //         &__img {
+    //             margin-top: auto;
+    //             height: calc(50vh - var(--header-height));
+    //         }
+    //         .button-std {
+    //             margin-top: 20px;
+    //         }
+    //     }
+    // }
