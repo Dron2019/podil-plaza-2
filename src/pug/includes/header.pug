@@ -90,25 +90,25 @@ aside.menu
     +svg('menu-decor').menu__decor.menu__decor-top
     ul
         li
-            a(href="") Про комплекс
+            a(href="#about") Про комплекс
         li
-            a(href="") Панорама
+            a(href="#panorama") Панорама
         li
-            a(href="") Інфраструктура
+            a(href="#panorama") Інфраструктура
         li
-            a(href="") Переваги
+            a(href="#panorama") Переваги
         li
-            a(href="") Квартири
+            a(href="#plans") Квартири
         li
-            a(href="") Забудовник
+            a(href="#developer") Забудовник
         li
-            a(href="") Контакти
+            a(href="#contacts") Контакти
     +svg('menu-decor').menu__decor.menu__decor-bottom
     .menu__lang-wrap
         .menu__sngl-lang.menu__sngl-lang_active Ук
         .menu__sngl-lang Ру
         .menu__sngl-lang En
-    a(href="tel:0443382727").menu__tel 044 338 27 27
+    a(href="tel:"+complexTel).menu__tel #{complexTel}
     .menu__form-call.js-form-call 
         .menu__form-call-inner Замовити дзвінок
     .mobile-call-menu.js-mobile-call-menu(data-opened="×" data-closed="Меню") Меню
