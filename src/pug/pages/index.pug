@@ -295,7 +295,90 @@ block content
 		.developer-second__title Будівництво ведеться
 		.subtitle із застосуванням передових технологій і використанням високоякісних матеріалів.
 	section.objects
+		+img('index/objects-bg.png').objects__bg
 		.title Об’єкти які знаходяться на стадії на будівництва: 
+		.objects__table
+			a.objects__table-item(target="_blank" href="https://podil-plaza.com.ua/ua/")
+				+img('index/objects/podil-plaza.png')
+				.objects__table-item-text-wrap
+					.objects__table-item-title ЖК «PODIL PLAZA&RESIDENCE»
+					.objects__table-item-point
+						+svg('metro').objects__table-item-point-icon
+						.objects__table-item-point-text Контрактова площа
+					.objects__table-item-point
+						+svg('marker').objects__table-item-point-icon
+						.objects__table-item-point-text вул. Глибочицька 73
+			a.objects__table-item(target="_blank" href="https://sky-river.com.ua/uk/glavnaja/golovna/")
+				+img('index/objects/sky-river.png')
+				.objects__table-item-text-wrap
+					.objects__table-item-title ЖК «SKY RIVER»
+					.objects__table-item-point
+						+svg('metro').objects__table-item-point-icon
+						.objects__table-item-point-text м. Славутич
+					.objects__table-item-point
+						+svg('marker').objects__table-item-point-icon
+						.objects__table-item-point-text вул. Приозерна 15
+			a.objects__table-item(target="_blank" href="https://olympicpark.com.ua/")
+				+img('index/objects/olympic-park.png')
+				.objects__table-item-text-wrap
+					.objects__table-item-title ЖК «OLYMPIC PARK»
+					.objects__table-item-point
+						+svg('metro').objects__table-item-point-icon
+						.objects__table-item-point-text м. Бориспільська
+					.objects__table-item-point
+						+svg('marker').objects__table-item-point-icon
+						.objects__table-item-point-text пр-т Бажана 17
+			a.objects__table-item(target="_blank" href="https://zhk-riviera.com.ua/")
+				+img('index/objects/riviera.png')
+				.objects__table-item-text-wrap
+					.objects__table-item-title ЖК «РІВ’ЄРА»19
+					.objects__table-item-point
+						+svg('metro').objects__table-item-point-icon
+						.objects__table-item-point-text м. Славутич
+					.objects__table-item-point
+						+svg('marker').objects__table-item-point-icon
+						.objects__table-item-point-text вул. Центральна 19
+	section.contacts
+		.title Контакти
+		.contacts__left
+			.contacts__subtitle Розташування
+			.icon-with-label.text-l
+				.icon-with-label__icon
+					<svg width="10" height="13" viewBox="0 0 10 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M5 4.24615C4.21429 4.24615 3.57143 4.89093 3.57143 5.67899C3.57143 6.46705 4.21429 7.11182 5 7.11182C5.37888 7.11182 5.74224 6.96086 6.01015 6.69216C6.27806 6.42345 6.42857 6.059 6.42857 5.67899C6.42857 5.29898 6.27806 4.93453 6.01015 4.66582C5.74224 4.39711 5.37888 4.24615 5 4.24615ZM5 0.664062C7.33571 0.664062 10 2.42645 10 5.78645C10 7.92138 8.47857 10.1709 5.43571 12.5136C5.17857 12.7142 4.82143 12.7142 4.56429 12.5136C1.52143 10.1638 0 7.92138 0 5.78645C0 2.42645 2.66429 0.664062 5 0.664062Z" fill="#E8E6DF"/>
+					</svg>
+				.icon-with-label__text м. Київ, Глибочицька 73
+			a.button-std(href="#") Показати на Google Maps
+			.contacts__remark * Перегляд об’єкту (для покупців) триває щоденно за попередньою згодою з відділом продажів
+			.contacts__subtitle Відділ продажів
+			.icon-with-label.text-l
+				.icon-with-label__icon
+					<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M6.23507 8.83959C7.15452 9.72856 8.26704 10.4149 9.49447 10.8504L11.155 9.59102C11.2042 9.55871 11.2626 9.54141 11.3224 9.54141C11.3822 9.54141 11.4405 9.55871 11.4898 9.59102L14.573 11.4843C14.69 11.5514 14.7891 11.6434 14.8624 11.7533C14.9357 11.8631 14.9812 11.9877 14.9953 12.1172C15.0094 12.2466 14.9917 12.3775 14.9436 12.4993C14.8956 12.6212 14.8184 12.7307 14.7183 12.8192L13.2736 14.1793C13.0667 14.3742 12.8124 14.5172 12.5335 14.5955C12.2545 14.6739 11.9595 14.6853 11.6748 14.6285C8.83476 14.0695 6.21707 12.7602 4.12085 10.8504C2.07116 8.92156 0.652789 6.46728 0.0377852 3.7853C-0.0229692 3.51816 -0.0102889 3.24059 0.0745972 2.97949C0.159483 2.7184 0.313697 2.48263 0.522292 2.29503L2.01986 0.918116C2.11253 0.827351 2.22555 0.757745 2.35044 0.714507C2.47534 0.67127 2.60888 0.655522 2.74107 0.668444C2.87326 0.681366 3.00067 0.722621 3.11376 0.789122C3.22685 0.855623 3.32268 0.945646 3.3941 1.05245L5.44664 3.95321C5.48204 3.99876 5.50115 4.05395 5.50115 4.11063C5.50115 4.16732 5.48204 4.22251 5.44664 4.26806L4.09443 5.81709C4.56377 6.96352 5.295 7.99599 6.23507 8.83959Z" fill="#E8E6DF"/>
+					</svg>	
+				.icon-with-label__text 044 338 27 27
+			.icon-with-label
+				.icon-with-label__icon
+					<svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M6 0.664062C2.68 0.664062 0 3.34406 0 6.66406C0 9.98406 2.68 12.6641 6 12.6641C9.32 12.6641 12 9.98406 12 6.66406C12 3.34406 9.32 0.664062 6 0.664062ZM8.28 8.98406C8.2 9.06406 8.09333 9.10406 8 9.10406C7.90667 9.10406 7.8 9.06406 7.72 8.98406L5.56 6.82406V3.30406C5.56 3.0774 5.73333 2.90406 5.96 2.90406C6.18667 2.90406 6.36 3.0774 6.36 3.30406V6.49073L8.28 8.41073C8.44 8.58406 8.44 8.8374 8.28 8.98406Z" fill="#E8E6DF"/>
+						</svg>
+				.icon-with-label__text пн-пт: 09:00-19:00 сб-вс: 10:00-17:00
+			.contacts__remark * Працюємо без вихідних та перерв на обід
+		.contacts__right
+			.contacts__subtitle  Залишилися запитання?
+			form.common-form(data-name="contact-form")
+				.input-group
+					.input-group__icon
+					input(autocomplete="off" data-error_mes="Введите имя" name="name" data-required="true" type="text" data-pattern="" placeholder="Имя:*")
+				.input-group
+					.input-group__icon
+					input(autocomplete="off" data-error_mes="Введите номер телефона" name="tel" inputmode="tel" data-required="true" type="text" data-pattern="" placeholder="Телефон:*")
+				.input-group
+					.input-group__icon
+					textarea(name='message' type="text" placeholder="Повідомлення")
+				button.button-std.submit-js(type="submit" value="Надіслати") Надіслати
+	.invisible-block
+		include ../includes/common-form.pug
 
 
 block footer
