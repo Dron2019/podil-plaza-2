@@ -449,6 +449,200 @@
         }
         &__img {
             height: 100%;
+            object-fit: cover;
+        }
+    }
+    
+    .plans {
+        padding: var(--side-fields);
+        flex-wrap: wrap;
+        display: flex;
+        .plan-card {
+            margin: 0 11px;
+        }
+        .icon--birdy {
+            width: 7px;
+            height: 12px;
+        }
+        .icon-with-label {
+            font-family: $default-font2;
+            cursor: pointer;
+            width: 50%;
+        }
+        .icon-with-label__text {
+            font-size: 18px;
+            line-height: 1.3em;
+            width: auto;
+            letter-spacing: 0.06em;
+            color: var(--blue-light);
+        }
+        .plans__slider {
+            width: 100%;
+            margin-top: 30px;
+        }
+        &__next {
+            flex-direction: row-reverse;
+            .icon-with-label__icon {
+                margin-left: 20px;
+                margin-right: 0;
+                transform: rotate(180deg);
+            }
+        }
+        .slick-list {
+            overflow: visible;
+        }
+        &__prev {}
+    }
+    
+    #icon-birdy {
+        fill: transparent;
+    }
+    
+    #icon-developer-logo {
+        // fill: red;
+    }
+    
+    .developer svg {
+        fill: red;
+    }
+    
+    .plan-card {
+        --self-padding: 30px;
+        padding: var(--self-padding);
+        border: 1px solid #E8E6DF;
+        border-radius: 25px;
+        text-align: center;
+        &__title {
+            font-family: $default-font2;
+            font-size: 36px;
+            line-height: 1em;
+            color: var(--blue);
+            margin-bottom: 10px;
+        }
+        &__img {
+            max-height: 210px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            object-fit: contain;
+        }
+        &__subtitle {
+            font-family: $default-font2;
+            color: var(--blue-light);
+            font-size: 18px;
+            line-height: 1em;
+            /* identical to box height, or 100% */
+            text-align: center;
+        }
+        &__text-title {
+            color: var(--blue);
+            font-weight: 600;
+        }
+        &__text-value {}
+        .button-std {
+            margin-top: 20px;
+            width: 150px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    
+    .developer {
+        padding: var(--side-fields);
+        background-color: #F4F3EC;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        .subtitle,
+        .text {
+            width: 50%;
+        }
+        .golden-circle {
+            width: 35%;
+            svg {
+                width: 65%;
+            }
+        }
+        .text {
+            align-self: flex-start;
+            padding-right: 15%;
+        }
+        .golden-circle {
+            padding-bottom: 35%;
+            margin-left: auto;
+        }
+    }
+    
+    .developer-second {
+        position: relative;
+        min-height: 75vh;
+        padding: 0 var(--side-fields);
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        &__title {
+            font-weight: 500;
+            font-size: 30px;
+            line-height: 1.2em;
+            text-align: right;
+            color: var(--blue);
+        }
+        &__bg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        &__gradient {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            background: linear-gradient(180deg, rgba(244, 243, 236, 1) 0%, rgba(9, 9, 121, 0) 50%);
+        }
+        &__decor {
+            margin-bottom: 60px;
+        }
+        &__decor,
+        &__title,
+        .subtitle {
+            position: relative;
+            z-index: 2;
+        }
+        &__title {
+            width: 50%;
+            padding-left: 10%;
+            padding-right: 80px;
+        }
+        .subtitle {
+            width: 50%;
+            padding-right: 25%;
+            padding-left: 0;
+        }
+    }
+    
+    .golden-circle {
+        position: relative;
+        width: 100%;
+        padding-bottom: 100%;
+        margin-bottom: 47px;
+        &__img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+        &__text {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
         }
     }
     

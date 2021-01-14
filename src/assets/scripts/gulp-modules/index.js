@@ -51,3 +51,28 @@ function alignBgUnderText(parent) {
     console.log(img, text);
     img.style.marginTop = text.getBoundingClientRect().height * -1 + 'px';
 }
+
+
+
+/**Слайдер планировок */
+let planSLider = $('.js-plans').slick({
+    slide: '.plan-card',
+    slidesToShow: 3.9,
+    infinite: false,
+    prevArrow: '.js-plans-prev',
+    nextArrow: '.js-plans-next',
+    responsive: [{
+            breakpoint: 1360,
+            settings: {
+                slidesToShow: 2.9,
+            }
+        },
+        {
+            breakpoint: 1200,
+            settings: {
+                slidesToShow: 2.4,
+            }
+        },
+    ]
+
+})
