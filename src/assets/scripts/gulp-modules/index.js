@@ -46,6 +46,7 @@ window.addEventListener('resize', function(evt) {
 });
 
 function alignBgUnderText(parent) {
+    // if (document.documentElement.clientWidth < 576) return;
     let img = parent.querySelector('img[class*="__bg"]');
     let text = parent.querySelector('[class*="__content"]');
     console.log(img, text);
@@ -71,6 +72,18 @@ let planSLider = $('.js-plans').slick({
             breakpoint: 1200,
             settings: {
                 slidesToShow: 2.4,
+            }
+        },
+        {
+            breakpoint: 1000,
+            settings: {
+                slidesToShow: 2,
+            }
+        },
+        {
+            breakpoint: 575,
+            settings: {
+                slidesToShow: 1,
             }
         },
     ]

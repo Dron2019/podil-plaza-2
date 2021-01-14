@@ -64,7 +64,7 @@
         color: var(--black);
     }
     @include to(575px) {
-        @include fontSizeLhToEm(16, 16);
+        @include fontSizeLhToEm(16, 21.6);
     }
 }
 
@@ -95,7 +95,9 @@
 }
 
 .left-shifted {
-    @include shift-padding-left(1);
+    @include from(575px) {
+        @include shift-padding-left(1);
+    }
 }
 
 .page__content {
@@ -112,8 +114,11 @@
     @include from(1680px) {
         @include fontSizeLhToEm(48, 48);
     }
+    @include to(950px) {
+        @include fontSizeLhToEm(28, 28);
+    }
     @include to(575px) {
-        @include fontSizeLhToEm(32, 32);
+        @include fontSizeLhToEm(24, 30);
     }
 }
 
@@ -463,7 +468,7 @@
 .mfp-bg {
     // background: transparent;
     // background: #f9afab40;
-    background: #E5E5E5;
+    background: #133C58;
 }
 
 .mfp-content>* {
@@ -653,23 +658,12 @@
         align-items: center;
     }
     .mfp-close-img {
-        background-color: var(--orange);
         width: 100%;
         height: 100%;
-        width: 37px;
+        width: 20px;
         transition: .3s ease-out;
         transform-box: fill-box;
-        height: 37px;
-    }
-    .mfp-close:before {
-        content: attr(data-before);
-        font-size: 14px;
-        line-height: 24px;
-        letter-spacing: 0.1em;
-        text-transform: lowercase;
-        color: var(--very-gray);
-        display: inline-block;
-        margin-right: 15px;
+        height: 20px;
     }
     .help-span {
         width: 100%;
@@ -837,7 +831,7 @@
         }
     }
     @include to(575px) {
-        padding: 17px;
+        padding: 17px 0;
         .input-group:first-child {
             width: 100%;
         }
@@ -853,26 +847,46 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 448px;
     overflow: hidden;
     .common-form {
         //отступ заголовка + высота кнопки закрыть + отступ кнопки закрыть от верха
         padding-top: calc(42px + 37px + 25px);
+        background-color: var(--blue);
+        padding: 70px;
+        max-width: 500px;
     }
-    &>img {
-        max-width: 448px;
-        width: 50%;
-        height: 100%;
-        object-fit: cover;
+    input::placeholder,
+    input {
+        color: #E8E6DF !important;
+        font-size: 16;
+        line-height: 20px;
     }
-    @include to(768px) {
-        &>img {
-            width: 30%;
-        }
+    legend {
+        font-family: $default-font2;
+        color: #E8E6DF;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+    .sublegend {
+        color: #A5A39D;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    .input-group {
+        padding-bottom: 26px;
+    }
+    .input-group__icon {
+        width: 18px;
+        height: 19px;
+    }
+    button[type=submit] {
+        width: 100%;
+        margin-top: 50px;
     }
     @include to(575px) {
-        &>img {
-            display: none;
+        .common-form {
+            padding: 55px 15px;
         }
     }
 }
@@ -895,7 +909,7 @@
     .mfp-close {
         cursor: pointer;
         transition: .4s ease-out;
-        width: 47px;
+        width: 20px;
         position: static;
         height: 47px;
         padding: 0;

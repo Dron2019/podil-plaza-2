@@ -13,6 +13,7 @@
     align-content: center;
     align-items: center;
     flex-direction: column;
+    transition: transform .3s ease-out;
     &__decor {
         &-bottom {
             transform: rotate(180deg);
@@ -70,5 +71,41 @@
         text-decoration: none;
         color: var(--ffffff);
         margin-bottom: 26px;
+    }
+    @include to(950px) {
+        --this-sides: 15px;
+        &__tel {
+            font-size: 18px;
+            line-height: 18px;
+        }
+        &__form-call {
+            width: 185px;
+        }
+    }
+    @include to(768px) {
+        transform: translateX(-100%);
+    }
+    @include to(575px) {
+        padding: var(--this-sides);
+    }
+}
+
+.mobile-call-menu {
+    position: fixed;
+    left: 100%;
+    top: 0;
+    color: var(--blue);
+    background-color: var(--gold);
+    padding: 5px 15px;
+    border-radius: 0 0 25px 0;
+    height: 50px;
+    font-family: $default-font2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--menu-mob-button-width);
+    z-index: 2000;
+    @include from(576px) {
+        display: none;
     }
 }

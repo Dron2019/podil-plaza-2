@@ -212,23 +212,26 @@ function offInvalidMessage(inputGroup) {
 function sendMessageStatus(form, status) {
     let element = document.createElement('span');
     element.style.cssText = `
-            animation: fadeIn 1s 1 ease-in-out ; 
-            color:#222222; 
-            position:absolute; 
+            animation: fadeInRight 1s 1 ease-in-out ; 
+            color:var(--gold); 
+            right:0;
+            bottom:0;
+            position:fixed; 
             padding:10px 20px; 
             white-space:nowrap;
-            background:var(--white);
-            left:50%;
-            top:25%;
+            background:var(--blue);
+            // left:50%;
+            // top:25%;
             font-size:24px; 
-            transform:translateX(-50%) translateY(-50%) `;
+            z-index:10000;
+            `;
     element.innerHTML = status;
     element.classList.add('send-message');
-    form.append(element);
+    document.body.append(element);
     setTimeout(() => {
-        form.querySelector('.send-message').style.animation = 'fadeOut 1s 1 ease-in';
-        form.querySelector('.send-message').addEventListener('animationend', function() {
-            form.querySelector('.send-message').remove();
+        element.style.animation = 'slide-out-right .5s 1 ease-in';
+        element.addEventListener('animationend', function() {
+            element.remove();
             // form.querySelector('.send-message').style.opacity = `0`;
         });
     }, 2000);
