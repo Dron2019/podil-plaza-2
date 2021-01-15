@@ -63,6 +63,9 @@
     &.black {
         color: var(--black);
     }
+    @include from(1680px) {
+        @include fontSizeLhToEm(28, 37);
+    }
     @include to(575px) {
         @include fontSizeLhToEm(16, 21.6);
     }
@@ -91,6 +94,9 @@
     line-height: 1.6em;
     &.gold {
         color: var(--gold);
+    }
+    @include from(1680px) {
+        @include fontSizeLhToEm(18, 30);
     }
 }
 
@@ -635,6 +641,9 @@
     font-size: 16px;
     // letter-spacing: 0.18em;
     color: var(--blue);
+    @include from(1680px) {
+        font-size: 20px;
+    }
 }
 
 .common-form {

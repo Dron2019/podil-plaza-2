@@ -24,7 +24,7 @@
         justify-content: center;
         align-items: center;
         font-size: 12px;
-        line-height: 12px;
+        line-height: 1em;
         /* identical to box height, or 100% */
         text-decoration: none;
         color: var(--ffffff);
@@ -72,6 +72,14 @@
         color: var(--ffffff);
         margin-bottom: 26px;
     }
+    &__logo {
+        width: 100%;
+    }
+    @include to(1680px) {
+        ul a {
+            font-size: 18px;
+        }
+    }
     @include to(950px) {
         --this-sides: 15px;
         &__tel {
@@ -86,7 +94,7 @@
         transform: translateX(-100%);
     }
     @include to(575px) {
-        padding: var(--this-sides);
+        padding: var(--this-sides) var(--this-sides) 50px var(--this-sides);
     }
 }
 

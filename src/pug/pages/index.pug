@@ -56,7 +56,7 @@ block content
 			.text.left-shifted Розкішне природне оточення біля підніжжя гори Щекавиця, статусне сусідство, ексклюзивна архітектура і дизайн, високоякісний сервіс — це правила життя у стилі преміум. Ваші правила!
 		.about-block__right-column
 			.about-block__golden-circle
-				img(src="./assets/images/index/golde-circle.png").about-block__golden-circle-img
+				img(data-src="./assets/images/index/golde-circle.png").about-block__golden-circle-img
 				.about-block__golden-circle-text <span class="text">Назва комплексу — </span><span class="text gold">не просто гарне поєднання слів.</span>
 			.subtitle Це відображення особливого статусу та способу життя.
 	section.about-block-bg#about
@@ -65,12 +65,12 @@ block content
 		.panorama__text-content
 			.title Панорама
 			.subtitle З вікон житлового комплексу «PODIL PLAZA & RESIDENCE–2» відкриваються приголомшливі панорамні види на старовинний Поділ.
-			a.button-std(href="") Показати на Google Maps
+			a.button-std(target='_blank' href="https://maps.google.com/?q="+complexAdress) Показати на Google Maps
 		.panorama-help-popup.js-panorama-help-popup
 			span.panorama-help-popup__text Андріївська церква
 		include ../includes/panorama.pug
 	section.podil-about#posil-about
-		img(src="./assets/images/index/podil-about-decor.png").podil-about__decor
+		img(data-src="./assets/images/index/podil-about-decor.png").podil-about__decor
 		.podil-about__content
 			.title «PODIL PLAZA & RESIDENCE - 2» - це новий настрій класичного Подолу.
 			.podil-about__column-left
@@ -78,10 +78,10 @@ block content
 			.podil-about__column-right
 				.text За кількістю історико-архітектурних пам’яток сучасний Поділ впевнено займає лідируючу позицію серед інших столичних районів.
 				.subtitle Незважаючи на появу нових сучасних об’єктів, Поділ зберіг свою чарівність та самобутність.
-		img(src="./assets/images/index/podil-about-bg.jpg").podil-about__bg
+		img(data-src="./assets/images/index/podil-about-bg.jpg").podil-about__bg
 	section.philosophy-double-section#advantages
 		picture.philosophy-double-section__img
-			img(src="./assets/images/index/advantages1.jpg")
+			img(data-src="./assets/images/index/advantages1.jpg")
 		.philosophy-double-section__text.home-screen-description-block
 			.home-screen-description-block__title.title Переваги
 				+img('index/advantages-decor1.png').philosophy-double-section__text-decor
@@ -139,7 +139,7 @@ block content
 						</svg>
 					.adv-sngl__text.text Закритий, повністю вільний від проїзду автомобілів двір з ландшафтним благоустроєм, зоною відпочинку та дитячим ігровим містечком преміального рівня для відпочинку та розваги мешканців будинку.
 		picture.philosophy-double-section__img
-			img(src="./assets/images/index/advantages2.jpg")
+			img(data-src="./assets/images/index/advantages2.jpg")
 	section.philosophy-double-section
 		picture.philosophy-double-section__img
 			img(src="./assets/images/index/advantages3.jpg")
@@ -183,12 +183,12 @@ block content
 
 					.adv-sngl__text.text Цілодобова охорона, відеоспостереження за внутрішньою і прибудинковою територією.
 	section.flats
-		img.flats__img(src="./assets/images/index/flats-bg1.jpg")
+		img.flats__img(data-src="./assets/images/index/flats-bg1.jpg")
 		.flats__text.flats__text_right
 			.title Квартири
 			.text Квартири в «PODIL PLAZA & RESIDENCE–2» — це ідеальне простір для створення розкішного інтер’єру вашої мрії. Ретельно продумані планувальні рішення квартир відповідають найвищим вимогам до житла класу Преміум.
 	section.flats
-		img.flats__img(src="./assets/images/index/flats-bg2.jpg")
+		img.flats__img(data-src="./assets/images/index/flats-bg2.jpg")
 		.flats__text
 			.subtitle Просторі кімнати з панорамними вікнами чудово підходять для прийому гостей. 
 			.text Квартири в «PODIL PLAZA & RESIDENCE–2» — це ідеальне простір для створення розкішного інтер’єру вашої мрії. Ретельно продумані планувальні рішення квартир відповідають найвищим вимогам до житла класу Преміум.
@@ -205,7 +205,18 @@ block content
 			.plan-card
 				.plan-card__title Тип 1А
 				.plan-card__subtitle 2-7 поверхи
-				img(src="./assets/images/index/plans/test.png").plan-card__img 
+				img(data-src="./assets/images/index/plans/test.png").plan-card__img 
+				.plan-card__text 
+					span.plan-card__text-title Загальна площа: 
+					span.plan-card__text-value 48,05 м<sup>2</sup>
+				.plan-card__text 
+					span.plan-card__text-title Житлова площа: 
+					span.plan-card__text-value  19,25 м<sup>2</sup>
+				.button-std PDF
+			.plan-card
+				.plan-card__title Тип 1А
+				.plan-card__subtitle 2-7 поверхи
+				img(data-src="./assets/images/index/plans/test.png").plan-card__img 
 				.plan-card__text 
 					span.plan-card__text-title Загальна площа: 
 					span.plan-card__text-value 48,05 м<sup>2</sup>
@@ -265,13 +276,8 @@ block content
 					span.plan-card__text-title Загальна площа: 
 					span.plan-card__text-value 48,05 м<sup>2</sup>
 				.plan-card__text 
-					span.plan-card__text-title Житлова площа: 
-					span.plan-card__text-value  19,25 м<sup>2</sup>
-				.button-std PDF
-			.plan-card
-				.plan-card__title Тип 1А
-				.plan-card__subtitle 2-7 поверхи
-				img(src="./assets/images/index/plans/test.png").plan-card__img 
+					span.plan-card__text-title Загальна площа: 
+					span.plan-card__text-value 48,05 м<sup>2</sup>
 				.plan-card__text 
 					span.plan-card__text-title Загальна площа: 
 					span.plan-card__text-value 48,05 м<sup>2</sup>
@@ -283,8 +289,9 @@ block content
 		.title Забудовник
 		.subtitle STATUS GROUP — стабільна і перспективна компанія, яка працює з 2005 року і представляє нове покоління в будівельному бізнесі, де стиль роботи базується на інноваційних рішеннях, величезному практичному досвіді і прагненні до досконалості.
 		.golden-circle
-			img(src="./assets/images/index/developer-golden-circle.png").golden-circle__img
-			+svg('developer-logo').golden-circle__text
+			img(data-src="./assets/images/index/developer-golden-circle.png").golden-circle__img
+			a(target='_blank' href="https://statusbud.com")
+				+svg('developer-logo').golden-circle__text
 			//-  <span class="text">Назва комплексу — </span><span class="text gold">не просто гарне поєднання слів.</span>
 		.text Компанія STATUS GROUP здійснює функції забудовника, замовника, інвестора, генерального підрядника і девелопера. 
 		.text Усі наші проекти – це новий формат житлової нерухомості з унікальною архітектурою, безпечною та упорядкованою територією і власною соціальною інфраструктурою, в яких враховані всі потреби покупців.
@@ -357,6 +364,10 @@ block content
 					<path d="M6.23507 8.83959C7.15452 9.72856 8.26704 10.4149 9.49447 10.8504L11.155 9.59102C11.2042 9.55871 11.2626 9.54141 11.3224 9.54141C11.3822 9.54141 11.4405 9.55871 11.4898 9.59102L14.573 11.4843C14.69 11.5514 14.7891 11.6434 14.8624 11.7533C14.9357 11.8631 14.9812 11.9877 14.9953 12.1172C15.0094 12.2466 14.9917 12.3775 14.9436 12.4993C14.8956 12.6212 14.8184 12.7307 14.7183 12.8192L13.2736 14.1793C13.0667 14.3742 12.8124 14.5172 12.5335 14.5955C12.2545 14.6739 11.9595 14.6853 11.6748 14.6285C8.83476 14.0695 6.21707 12.7602 4.12085 10.8504C2.07116 8.92156 0.652789 6.46728 0.0377852 3.7853C-0.0229692 3.51816 -0.0102889 3.24059 0.0745972 2.97949C0.159483 2.7184 0.313697 2.48263 0.522292 2.29503L2.01986 0.918116C2.11253 0.827351 2.22555 0.757745 2.35044 0.714507C2.47534 0.67127 2.60888 0.655522 2.74107 0.668444C2.87326 0.681366 3.00067 0.722621 3.11376 0.789122C3.22685 0.855623 3.32268 0.945646 3.3941 1.05245L5.44664 3.95321C5.48204 3.99876 5.50115 4.05395 5.50115 4.11063C5.50115 4.16732 5.48204 4.22251 5.44664 4.26806L4.09443 5.81709C4.56377 6.96352 5.295 7.99599 6.23507 8.83959Z" fill="#E8E6DF"/>
 					</svg>	
 				.icon-with-label__text #{complexTel}
+			a(href="mailto:"+email).icon-with-label.text-l
+				.icon-with-label__icon
+					+svg('letter-box')
+				.icon-with-label__text #{email}
 			.icon-with-label
 				.icon-with-label__icon
 					<svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">

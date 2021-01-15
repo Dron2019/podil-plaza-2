@@ -54,8 +54,16 @@ function alignBgUnderText(parent) {
 }
 
 
+$('.js-plans').on('init', () => {
+        let planCards = document.querySelectorAll('.plan-card');
+        let planCardHeight = Array.from(planCards).map(el => el.getBoundingClientRect().height);
+        planCards.forEach(card => {
+            card.style.height = Math.max.apply(null, planCardHeight) + 'px';
+        })
+        console.log(planCardHeight);
 
-/**Слайдер планировок */
+    })
+    /**Слайдер планировок */
 let planSLider = $('.js-plans').slick({
     slide: '.plan-card',
     slidesToShow: 3.9,
@@ -88,4 +96,35 @@ let planSLider = $('.js-plans').slick({
         },
     ]
 
+})
+
+
+
+
+
+
+let lazyImages = document.querySelectorAll('img[data-src]');
+var options = {
+    rootMargin: '0px',
+    threshold: 0.1
+}
+lazyImages.forEach(image => {
+    image.style.opacity = 0;
+    image.style.transition = ' .3s ease-out';
+    image.addEventListener('load', function(evt) {
+        image.style.opacity = 1;
+    });
+    var callback = function(entries, observer) {
+        /* Content excerpted, show below */
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const lazyImage = entry.target
+                lazyImage.src = lazyImage.dataset.src;
+
+            }
+        })
+    };
+    var observer = new IntersectionObserver(callback, options);
+    var target = image;
+    observer.observe(target);
 })
