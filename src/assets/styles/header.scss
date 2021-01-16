@@ -32,6 +32,7 @@
         letter-spacing: 0.1em;
         text-transform: uppercase;
         margin-bottom: 1.75em;
+        transition: color .15s ease-out;
     }
     .icon--menu-decor {
         width: 100%;
@@ -74,6 +75,11 @@
     }
     &__logo {
         width: 100%;
+    }
+    @include from(769px){
+        ul a:hover {
+            color: var(--gold);
+        }
     }
     @include to(1680px) {
         ul a {

@@ -641,8 +641,15 @@
     font-size: 16px;
     // letter-spacing: 0.18em;
     color: var(--blue);
+    transition: .2s ease-out;
     @include from(1680px) {
         font-size: 20px;
+    }
+    @include from(769px){
+        &:hover{
+
+            background-color: var(--ffffff);
+        }
     }
 }
 
