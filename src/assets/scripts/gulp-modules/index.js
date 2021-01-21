@@ -39,10 +39,12 @@ hearts.forEach(icon => {
 /**Выравнивание картинки бекграунда под высоту текста */
 
 const podilAbout = document.querySelector('.podil-about');
-alignBgUnderText(podilAbout);
+// alignBgUnderText(podilAbout);
+window.addEventListener('load', function(evt) {
+    alignBgUnderText(podilAbout);
+});
 window.addEventListener('resize', function(evt) {
     alignBgUnderText(podilAbout);
-
 });
 
 function alignBgUnderText(parent) {
@@ -54,49 +56,52 @@ function alignBgUnderText(parent) {
 }
 
 
-$('.js-plans').on('init', () => {
-        let planCards = document.querySelectorAll('.plan-card');
-        let planCardHeight = Array.from(planCards).map(el => el.getBoundingClientRect().height);
-        planCards.forEach(card => {
-            card.style.height = Math.max.apply(null, planCardHeight) + 'px';
+window.addEventListener('load', function(evt) {
+    $('.js-plans').on('init', () => {
+            let planCards = document.querySelectorAll('.plan-card');
+            let planCardHeight = Array.from(planCards).map(el => el.getBoundingClientRect().height);
+            planCards.forEach(card => {
+                card.style.height = Math.max.apply(null, planCardHeight) + 'px';
+            })
+            console.log(planCardHeight);
+
         })
-        console.log(planCardHeight);
+        /**Слайдер планировок */
+    let planSLider = $('.js-plans').slick({
+        slide: '.plan-card',
+        slidesToShow: 3.9,
+        infinite: false,
+        swipe: false,
+        prevArrow: '.js-plans-prev',
+        nextArrow: '.js-plans-next',
+        responsive: [{
+                breakpoint: 1360,
+                settings: {
+                    slidesToShow: 2.9,
+                }
+            },
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 2.4,
+                }
+            },
+            {
+                breakpoint: 1000,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 575,
+                settings: {
+                    slidesToShow: 1,
+                }
+            },
+        ]
 
     })
-    /**Слайдер планировок */
-let planSLider = $('.js-plans').slick({
-    slide: '.plan-card',
-    slidesToShow: 3.9,
-    infinite: false,
-    prevArrow: '.js-plans-prev',
-    nextArrow: '.js-plans-next',
-    responsive: [{
-            breakpoint: 1360,
-            settings: {
-                slidesToShow: 2.9,
-            }
-        },
-        {
-            breakpoint: 1200,
-            settings: {
-                slidesToShow: 2.4,
-            }
-        },
-        {
-            breakpoint: 1000,
-            settings: {
-                slidesToShow: 2,
-            }
-        },
-        {
-            breakpoint: 575,
-            settings: {
-                slidesToShow: 1,
-            }
-        },
-    ]
-
-})
+});
 
 
 

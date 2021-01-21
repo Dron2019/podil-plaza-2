@@ -75,7 +75,7 @@
     &__logo {
         width: 100%;
     }
-    @include to(1680px) {
+    @include from(1680px) {
         ul a {
             font-size: 18px;
         }
@@ -106,7 +106,7 @@
     background-color: var(--gold);
     padding: 5px 15px;
     border-radius: 0 0 25px 0;
-    height: 50px;
+    height: 36px;
     font-family: $default-font2;
     display: flex;
     align-items: center;

@@ -56,7 +56,7 @@
 .subtitle {
     @include fontSizeLhToEm(20, 30);
     font-weight: 600;
-    color: var(--blue-light);
+    color: var(--blue);
     &.bold {
         font-weight: bold;
     }
@@ -74,7 +74,7 @@
 .text {
     @include fontSizeLhToEm(14, 24);
     text-decoration: none;
-    color: var(--blue-light);
+    color: var(--blue);
     span {
         text-decoration: none;
     }
@@ -708,14 +708,14 @@
         line-height: 1.3em;
         letter-spacing: 0.06em;
         /* Text */
-        color: #031826;
+        color: var(--blue);
         font-family: $default-font2;
         align-self: center;
         width: 100%;
     }
     input::placeholder,
     textarea::placeholder {
-        color: var(--black);
+        color: var(--blue);
     }
     textarea {
         resize: none;
@@ -809,7 +809,7 @@
             transform: rotate(0.5turn);
         }
     }
-    @include from(1720px) {
+    @include from(1680px) {
         .input-group:first-child {
             padding-top: 10px;
         }
@@ -819,7 +819,7 @@
         }
         input,
         textarea {
-            @include fontSizeLhToEm(14, 22);
+            @include fontSizeLhToEm(18, 24);
         }
         .input-group {
             padding-bottom: 20px;
