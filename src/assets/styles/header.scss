@@ -95,6 +95,16 @@
     }
     @include to(575px) {
         padding: var(--this-sides) var(--this-sides) 50px var(--this-sides);
+        ul a {
+            margin-bottom: 1.25em;
+        }
+        &__lang-wrap {
+            margin-bottom: 10px;
+        }
+        .icon--menu-decor {
+            height: 31px;
+            margin: auto;
+        }
     }
 }
 
@@ -113,7 +123,7 @@
     justify-content: center;
     width: var(--menu-mob-button-width);
     z-index: 2000;
-    @include from(576px) {
+    @include from(769px) {
         display: none;
     }
 }

@@ -1,5 +1,6 @@
 extends ../layout/main
 block variable
+	- var prices =[['1 к - Квартира 		',		'35 000'],['2 к - Квартира 		',		'32 000'],['3 к - Квартира 		',		'32 000'],['Пентхаус - 			',		'60 000'],['Торгівельні приміщення ',		'65 000'],['Офісні приміщення 		',	'50 000'],['Паркінг 				',		'50 000'],]
 	- var version = "ua";
 	- var pageName = "index";
 block meta
@@ -33,22 +34,47 @@ block content
 			.main-screen__title Багатофункціональний житловий комплекс бізнес класу
 			.main-screen__but.js-form-call Дізнатися більше
 		.main-screen__section-info-wrap
-			.section-info 
-				.section-info__top
-					span Секція 1 
-					span |
-					span UAH /м2
-				.section-info__price 
-					span >
-					span 38550
-			.section-info 
-				.section-info__top
-					span Секція 2 
-					span |
-					span UAH /м2
-				.section-info__price 
-					span >
-					span 42403
+			each val in prices
+				.section-info 
+					.section-info__top
+						span #{val[0]}
+						span |
+						span UAH /м2
+					.section-info__price 
+						span >
+						span #{val[1]}
+			//- .section-info 
+			//- 	.section-info__top
+			//- 		span 2 к - Квартира 
+			//- 		span |
+			//- 		span UAH /м2
+			//- 	.section-info__price 
+			//- 		span >
+			//- 		span 32000
+			//- .section-info 
+			//- 	.section-info__top
+			//- 		span 3 к - Квартира 
+			//- 		span |
+			//- 		span UAH /м2
+			//- 	.section-info__price 
+			//- 		span >
+			//- 		span 32000
+			//- .section-info 
+			//- 	.section-info__top
+			//- 		span Пентхаус
+			//- 		span |
+			//- 		span UAH /м2
+			//- 	.section-info__price 
+			//- 		span >
+			//- 		span 60000
+			//- .section-info 
+			//- 	.section-info__top
+			//- 		span Торгівельні приміщення
+			//- 		span |
+			//- 		span UAH /м2
+			//- 	.section-info__price 
+			//- 		span >
+			//- 		span 65
 	section.about-block 
 		.about-block__left-column
 			.title Про комплекс
@@ -81,7 +107,7 @@ block content
 		img(data-src="./assets/images/index/podil-about-bg.jpg").podil-about__bg
 	section.philosophy-double-section#advantages
 		picture.philosophy-double-section__img
-			img(data-src="./assets/images/index/advantages1.jpg")
+			img(data-src="./assets/images/index/advantages2.jpg")
 		.philosophy-double-section__text.home-screen-description-block
 			.home-screen-description-block__title.title Переваги
 				+img('index/advantages-decor1.png').philosophy-double-section__text-decor

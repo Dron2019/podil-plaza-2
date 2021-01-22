@@ -57,7 +57,7 @@ menuCall.addEventListener('click', function(evt) {
 
 });
 
-header.querySelectorAll('ul a').forEach(link => {
+header.querySelectorAll('ul a, a[href*="#"]').forEach(link => {
     link.addEventListener('click', function(evt) {
         evt.preventDefault();
         document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: "smooth" });

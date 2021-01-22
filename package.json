@@ -7,7 +7,9 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "git-push": "git push https://github.com/Dron2019/podil-plaza-2.git master",
         "get-file-names": "dir /b /s",
-        "gulp": "gulp"
+        "gulp": "gulp",
+        "push": "git add . && npm run push2",
+        "push2": "git commit -m %npm_config_message% && git push origin %npm_config_branch%"
     },
     "browserslist": [
         "last 3 version"
