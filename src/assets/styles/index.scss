@@ -49,15 +49,15 @@
     
     .main-screen {
         position: relative;
-        min-height: 120vh;
-        padding-bottom: 50vh;
+        min-height: 100vh;
+        padding-bottom: 45px;
         color: var(--white);
         display: flex;
         align-content: flex-start;
         flex-wrap: wrap;
         justify-content: flex-start;
         padding-top: 55px;
-        --ms-side-padding: 100px;
+        --ms-side-padding: 45px;
         padding-left: var(--ms-side-padding);
         padding-right: var(--ms-side-padding);
         .main-screen__bg {
@@ -78,12 +78,17 @@
             position: relative;
             z-index: 1;
         }
+        &__title-wrap {
+            @include size(6);
+            @include shift(0);
+            margin-bottom: auto;
+        }
         &__title {
             max-width: 25ch;
             font-size: 36px;
             line-height: 1.3em;
             font-family: $default-font2;
-            color: var(--blue);
+            color: var(--ffffff);
         }
         &__but {
             width: 250px;
@@ -109,7 +114,8 @@
             margin-left: auto;
             margin-right: calc( var(--ms-side-padding) * -1);
             display: flex;
-            width: 100%;
+            @include size(6);
+            @include shift(0);
             margin-left: 0;
             flex-wrap: wrap;
             padding-top: 25px;
@@ -117,10 +123,59 @@
         .section-info {
             margin-bottom: 28px;
         }
-        &__section-info-wrap,
-        &__title-wrap {
+        &__section-info-wrap {
             margin-top: auto;
             margin-bottom: auto;
+        }
+        .icon-with-label {
+            color: var(--ffffff);
+        }
+        .scroll-ms {
+            animation-name: scroll;
+            animation-duration: 1.5s;
+            animation-timing-function: cubic-bezier(0.650, -0.550, 0.250, 1.500);
+            animation-iteration-count: infinite;
+            transform-origin: 50% 20.5px;
+            will-change: transform, opacity;
+            opacity: 1;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 19, 32, 0.8);
+            z-index: 0;
+        }
+        @include from(951px) {
+            &__scroll-alert {
+                position: absolute !important;
+                max-width: 120px;
+                color: var(--ffffff);
+                left: var(--ms-side-padding);
+                bottom: var(--ms-side-padding);
+                display: flex;
+                justify-content: space-between;
+                svg {
+                    width: 26px;
+                    height: 44px;
+                }
+                &-text {
+                    margin-left: 20px;
+                }
+            }
+        }
+        @include from(1240px) {
+            .icon-with-label:nth-child(1) {
+                @include size(6);
+                @include shift(0);
+            }
+            .icon-with-label:nth-child(n+2) {
+                @include size(3);
+                @include shift(0);
+            }
         }
         @include from(1680px) {
             min-height: 150vh;
@@ -140,17 +195,31 @@
                 border-radius: 0 25px 25px 0;
             }
             .section-info:nth-child(odd) {
-                margin-left: calc(var(--ms-side-padding) * -1);
-                padding-right: calc(50% - 25ch);
+                // margin-left: calc(var(--ms-side-padding) * -1);
+                // padding-right: calc(50% - 25ch);
             }
             .section-info:nth-child(even) {
-                margin-right: calc(var(--ms-side-padding) * -1);
+                // margin-right: calc(var(--ms-side-padding) * -1);
                 margin-left: auto;
-                padding-left: calc(50% - 25ch);
+                // padding-left: calc(50% - 25ch);
             }
         }
-        @include to(1200px) {
-            --ms-side-padding: 50px;
+        @include to(1240px) {
+            --ms-side-padding: 30px;
+            &__section-info-wrap {
+                width: 100%;
+            }
+        }
+        @include to(1150px) {
+            &__scroll-alert {
+                position: static !important;
+                margin-top: 35px;
+            }
+        }
+        @include to(950px) {
+            &__scroll-alert {
+                display: none;
+            }
         }
         @include to(575px) {
             padding-left: var(--side-fields);
@@ -191,6 +260,7 @@
             }
             &__title-wrap {
                 margin-bottom: 40px;
+                width: 100%;
             }
             &__icons-row {
                 order: 0;
@@ -216,6 +286,7 @@
                 pointer-events: none;
                 top: calc(100% + 6px);
                 background-color: #ffffff;
+                color: var(--blue);
                 transition: .3s ease-out;
                 padding: 10px 15px;
                 border-radius: 25px 0px 25px 25px;
@@ -245,23 +316,13 @@
                 margin-right: 0;
                 margin-left: 20px;
             }
-            &:after {
-                content: '';
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(255, 255, 255, 0.35);
-                z-index: 0;
-            }
         }
     }
     
     .section-info {
         &__top {
             border-radius: 25px 0px 0px 25px;
-            background-color: var(--ffffff);
+            // background-color: var(--ffffff);
             font-size: 10px;
             line-height: 1.2em;
             height: 40px;
@@ -271,17 +332,18 @@
             justify-content: flex-start;
             padding-right: 72px;
             span:first-child {
-                color: var(--blue);
+                color: var(--ffffff);
+                line-height: 1.6em;
                 font-weight: bold;
                 text-transform: uppercase;
             }
             span:nth-child(2) {
                 margin-left: 10px;
                 margin-right: 10px;
-                color: var(--brown);
+                color: var(--ffffff);
             }
             span:nth-child(3) {
-                color: #031826;
+                color: var(--ffffff);
             }
         }
         &__price {
@@ -290,11 +352,11 @@
             line-height: 1em;
             font-family: $default-font2;
             span:first-child {
-                color: var(--brown);
+                color: #ffffff;
                 margin-right: 20px;
             }
             span:not(:first-child) {
-                color: var(--blue);
+                color: #EBC78C;
             }
         }
         @include to(575px) {
