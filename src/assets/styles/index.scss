@@ -179,7 +179,7 @@
             }
         }
         @include from(1680px) {
-            min-height: 150vh;
+            // min-height: 150vh;
             &__title {
                 font-size: 48px;
                 max-width: 18ch;
@@ -348,8 +348,8 @@
             }
         }
         &__price {
-            font-size: 36px;
-            margin-top: 20px;
+            font-size: 32px;
+            margin-top: 0.5em;
             line-height: 1em;
             font-family: $default-font2;
             span:first-child {
@@ -1017,6 +1017,12 @@
             .subtitle {
                 align-self: flex-start;
                 order: 2;
+            }
+        }
+        @include from(1360px) {
+            .golden-circle {
+                width: Min(35%, 320px);
+                padding-bottom: Min(35%, 320px);
             }
         }
         @include to(950px) {

@@ -42,25 +42,33 @@ let menuCall = document.querySelector(".js-mobile-call-menu");
 let isOpened = false;
 menuCall.addEventListener('click', function(evt) {
     menuCall.isOpened = !menuCall.isOpened;
-
-    if (menuCall.isOpened) {
-        header.style.transform = 'translateX(0)';
-        menuCall.textContent = menuCall.dataset.opened;
-
-    } else {
-        header.style.transform = 'translateX(-100%)';
-        menuCall.textContent = menuCall.dataset.closed;
-
-    }
-
-
-
+    menuCall.isOpened ? openMenu(header, menuCall) : closeMenu(header, menuCall);
 });
+
+function openMenu(menu, callBut) {
+    menu.style.transform = 'translateX(0)';
+    callBut.textContent = callBut.dataset.opened;
+}
+
+function closeMenu(menu, callBut) {
+    menu.style.transform = 'translateX(-100%)';
+    callBut.textContent = callBut.dataset.closed;
+}
+
 
 header.querySelectorAll('ul a, a[href*="#"]').forEach(link => {
     link.addEventListener('click', function(evt) {
         evt.preventDefault();
         document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: "smooth" });
+        if (document.documentElement.clientWidth < 576) closeMenu(header, menuCall);
+
+    });
+})
+header.querySelectorAll('.js-form-call').forEach(link => {
+    link.addEventListener('click', function(evt) {
+        evt.preventDefault();
+        if (document.documentElement.clientWidth < 576) closeMenu(header, menuCall);
+
     });
 })
 
